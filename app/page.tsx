@@ -1,9 +1,5 @@
-import { TravelMap } from "./components/TravelMap";
+import { MapContainer } from "./components/MapContainer";
 
 export default function Home() {
-  return (
-    <div className="min-h-screen">
-      <TravelMap />
-    </div>
-  );
+  return <MapContainer />;
 }
