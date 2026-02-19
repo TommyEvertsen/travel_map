@@ -13,7 +13,7 @@ import { fromLonLat } from "ol/proj.js";
 import VectorSource from "ol/source/Vector.js";
 import { Style, Stroke, Fill } from "ol/style.js";
 
-export const TravelMap = ({ isVectorLayerVisible }) => {
+export const TravelMap = ({ isTravelLayerVisible }) => {
   const mapRef = useRef(null);
   const vectorLayerRef = useRef(null);
   const totalCountries = 195;
@@ -53,7 +53,7 @@ export const TravelMap = ({ isVectorLayerVisible }) => {
           color: "rgba(255, 255, 255, 0.1)",
         }),
       }),
-      visible: isVectorLayerVisible,
+      visible: isTravelLayerVisible,
     });
 
     vectorLayerRef.current = vector;
@@ -99,16 +99,16 @@ export const TravelMap = ({ isVectorLayerVisible }) => {
 
   useEffect(() => {
     if (vectorLayerRef.current) {
-      vectorLayerRef.current.setVisible(isVectorLayerVisible);
+      vectorLayerRef.current.setVisible(isTravelLayerVisible);
     }
-  }, [isVectorLayerVisible]);
+  }, [isTravelLayerVisible]);
 
   return (
-    <div className="map-container relative w-full h-full">
+    <div className="map-container relative w-full h-full ">
       <div ref={mapRef} className="map w-full h-full"></div>
       <div
         id="status"
-        className="absolute top-4 left-4 bg-white bg-opacity-90 px-3 py-2 rounded shadow-md text-sm z-40"
+        className="absolute top-4 right-4 bg-white bg-opacity-90 px-3 py-2 rounded shadow-md text-sm z-40"
       >
         &nbsp;
       </div>
