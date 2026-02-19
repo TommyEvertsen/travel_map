@@ -51,10 +51,48 @@ body {
   position: absolute;
   top: 10px;
   right: 10px;
-  background: rgba(255, 255, 255, 0.9);
+  background: #384959;
+  color: white;
   padding: 5px 10px;
   border-radius: 4px;
   font-size: 12px;
   z-index: 1000;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.ol-rotate {
+  display: none;
+}
+
+.ol-zoom {
+  font-size: 1.5rem;
+  padding-left: 1rem;
+  padding-top: 1rem;
+}
+
+.ol-zoom-in {
+  padding: 0.6rem;
+  border: 1px solid #bdddfc;
+  cursor: pointer;
+  background: #384959;
+  color: white;
+}
+
+.ol-zoom-out {
+  padding: 0.6rem;
+  border: 1px solid #bdddfc;
+  cursor: pointer;
+  background: #384959;
+  color: white;
+}
+
+.ol-attribution {
+  padding-left: 1rem;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+.ol-attribution-collapse {
+  display: none;
 }

@@ -3,22 +3,31 @@
 import { useState } from "react";
 import { TravelMap } from "./TravelMap";
 import Sidebar from "./Sidebar";
+import Header from "./Header";
 
 export const MapContainer = () => {
-  const [isVectorLayerVisible, setIsVectorLayerVisible] = useState(true);
+  const [isTravelLayerVisible, setIsTravelLayerVisible] = useState(true);
+  const [openSidebar, setIsOpenSidebar] = useState(false);
 
-  const toggleVectorLayer = () => {
-    setIsVectorLayerVisible(!isVectorLayerVisible);
+  const toggleTravelLayer = () => {
+    setIsTravelLayerVisible(!isTravelLayerVisible);
   };
 
   return (
-    <div className="flex h-screen overflow-hidden">
-      <Sidebar
-        isVectorLayerVisible={isVectorLayerVisible}
-        onToggleVectorLayer={toggleVectorLayer}
-      />
-      <div className="flex-1">
-        <TravelMap isVectorLayerVisible={isVectorLayerVisible} />
+    <div className="flex flex-col h-screen overflow-hidden">
+      <Header openSidebar={openSidebar} setIsOpenSidebar={setIsOpenSidebar} />
+      <div className="relative flex-1">
+        <div className="absolute inset-0">
+          <TravelMap isTravelLayerVisible={isTravelLayerVisible} />
+        </div>
+        <div className="absolute top-0 left-0 z-50 h-full">
+          <Sidebar
+            isTravelLayerVisible={isTravelLayerVisible}
+            onToggleVectorLayer={toggleTravelLayer}
+            openSidebar={openSidebar}
+            setIsOpenSidebar={setIsOpenSidebar}
+          />
+        </div>
       </div>
     </div>
   );
