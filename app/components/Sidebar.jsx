@@ -44,7 +44,7 @@ const Sidebar = ({
         <div className="createdBy text-center mt-auto">
           <p className="text-white text-sm">Developed by </p>
           <a
-            href="https://tommyevertsen.github.io/About_me"
+            href="https://about-me-five-beta.vercel.app"
             className="text-[#88bdf2] text-sm"
             target="_blank"
             rel="noopener noreferrer"
